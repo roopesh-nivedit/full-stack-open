@@ -11,7 +11,12 @@ sequenceDiagram
     server-->>browser: Requests a GET request to /exampleapp/notes
     deactivate server
     
-    Note left of server: Triggers 3 GET requests
+    Note left of server: Triggers multiple GET requests
+    
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+    activate server
+    server-->>browser: HTML document
+    deactivate server
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
     activate server
